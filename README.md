@@ -1,12 +1,40 @@
-# Stabilizing Causal Structure Learning under Heteroscedasticity: Analysis and Mitigation of Optimization Failures
+# HNM
 
-@ KDD 2026
+Official implementation of **Stabilizing Causal Structure Learning under Heteroscedasticity: Analysis and Mitigation of Optimization Failures** (KDD 2026).
 
-### Abstract 
-This study focuses on learning causal directed acyclic graphs (DAGs) under a heteroscedastic noise models (HNMs), wherein an effect is modeled as a function of its cause and a Gaussian noise term whose variance depends on the cause. While HNMs theoretically guarantee identifiability of causal structures, we show that gradient-based learning often fails in practice due to adverse optimization landscapes. Integrating HNMs into a continuous optimization framework allows us to learn a DAG under an acyclicity constraint by maximizing a likelihood objective parameterized by both mean and variance. However, DAG learning under HNM inherits the challenges of gradient-based likelihood optimization: the gradient is scaled by the predictive variance, which introduces a new optimization issue in DAG learning under an acyclicity constraint. In this paper, we first identify and formalize the emergence of this specific failure mode. In early training, because the gradient of reconstruction loss is scaled by the predicted variance, it becomes heavily attenuated; as a result, the DAG parameters are updated primarily by the acyclicity constraint, hindering effective structure learning. To resolve this, we propose a graduated optimization strategy utilizing a surrogate loss. Unlike the standard likelihood, this surrogate loss prevents gradient attenuation by decoupling the variance term from the reconstruction loss. We introduce a scheduling coefficient to schedule the training process: it initializes with a high weight on the surrogate loss to ensure stable mean learning, then gradually lowers the coefficient to transition to the full heteroscedastic likelihood to refine variance estimates and strictly enforce the acyclicity constraint. This approach effectively avoids the failure certificate, ensuring that the learned DAG faithfully reflects the data. Experimental results on both synthetic and real-world data verify the effectiveness of our approach.
+## Requirements
 
-## Performance 
-TBD
+- python=3.9
+- numpy=2.0.1
+- scipy=1.13.1
+- torch = 2.4.0
+- scikit-learn=1.6.1
+- python-igraph
 
-## Citation
-TBD
+## Example: generating nonlinear heteroscedastic data
+
+To generate nonlinear data with heteroscedastic noise, run:
+
+```console
+$ python data_generation.py --num_size 5 --s0 2 --sem mlp --graph_type ER --sample_size 1000 --data_type hetero
+````
+
+## Example: running the algorithm
+
+After generating the nonlinear heteroscedastic data using the script above, run the proposed algorithm as follows:
+
+```console
+$ python main.py --tau 5 --max 1000 --init 100
+```
+
+where `--tau` denotes the decay-rate parameter `tau`, `--max` denotes the transition step `t_star`, and `--init` denotes the initial scheduling weight `lambda_reg(0)`.
+
+The scheduling coefficient is computed as:
+
+```text
+lambda_reg(t) = lambda_reg(0) * exp(-t / (t_star / tau))
+```
+
+In the example above, `--tau 5` sets `tau = 5`, `--max 1000` sets `t_star = 1000`, and `--init 100` sets `lambda_reg(0) = 100`.
+
+Here, `t_star` corresponds to the transition point \(t^{*}\) in the paper.
