@@ -1,4 +1,4 @@
-# HNM
+# Stabilizing Causal Structure Learning under Heteroscedasticity: Analysis and Mitigation of Optimization Failures
 
 Official implementation of **Stabilizing Causal Structure Learning under Heteroscedasticity: Analysis and Mitigation of Optimization Failures** (KDD 2026).
 
@@ -37,4 +37,4 @@ lambda_reg(t) = lambda_reg(0) * exp(-t / (t_star / tau))
 
 In the example above, `--tau 5` sets `tau = 5`, `--max 1000` sets `t_star = 1000`, and `--init 100` sets `lambda_reg(0) = 100`.
 
-Here, `t_star` corresponds to the transition point \(t^{*}\) in the paper.
+Here, `t_star` corresponds to the transition point $t^{*}$ in the paper.
