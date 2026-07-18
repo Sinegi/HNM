@@ -2,12 +2,14 @@
 
 <h3 align="center">Analysis and Mitigation of Optimization Failures</h3>
 
+<p align="center">✨ <strong>KDD 2026</strong> ✨</p>
+
 <p align="center">
   <strong>Eunjung Choi<sup>†</sup> · Seonggyeom Kim<sup>†</sup> · Dong-Kyu Chae<sup>*</sup></strong>
   <br>
   <a href="https://dilab.hanyang.ac.kr/">Data Intelligence Lab</a>, Hanyang University
   <br>
-  <sup>†</sup>Equal contribution &nbsp;&nbsp; <sup>*</sup>Corresponding author
+  <sup>†</sup>Equal contribution    <sup>*</sup>Corresponding author
   <br><br>
   <a href="main_paper.pdf"><strong>Main Paper</strong></a> ·
   <a href="Supplementary_Material.pdf"><strong>Supplementary Material</strong></a> ·
@@ -26,7 +28,7 @@ Heteroscedastic noise can destabilize likelihood-based causal structure learning
 
 ## 🔍 Failure Analysis
 
-Standard objectives rapidly satisfy the DAG constraint, but this early convergence does not necessarily produce an accurate causal graph. As shown below, NLL, MSE, and $\beta$-NLL quickly drive $h(W)$ toward zero while their structural error plateaus. Our scheduling strategy maintains a more balanced optimization trajectory and continues reducing SHD.
+Standard objectives rapidly satisfy the DAG constraint, but this early convergence does not necessarily produce an accurate causal graph. As shown below, NLL, MSE, and β-NLL quickly drive `h(W)` toward zero while their structural error plateaus. Our scheduling strategy maintains a more balanced optimization trajectory and continues reducing SHD.
 
 <p align="center">
   <img src="assets/problem_analysis.png" width="100%" alt="Comparison of objective contribution ratio, DAG constraint, and structural Hamming distance during optimization">
@@ -41,13 +43,10 @@ Standard objectives rapidly satisfy the DAG constraint, but this early convergen
 To mitigate the optimization failure above, the method begins with stabilizing mean and variance objectives and progressively transitions toward heteroscedastic negative log-likelihood optimization. The scheduling coefficient follows
 
 $$
-\lambda_{\mathrm{reg}}(t)
-=
-\lambda_{\mathrm{reg}}(0)
-\exp\!\left(-\frac{t}{t^*/\tau}\right),
+\lambda_{\mathrm{reg}}(t) = \lambda_{\mathrm{reg}}(0) \exp\!\left(-\frac{t}{t^*/\tau}\right)
 $$
 
-where $\lambda_{\mathrm{reg}}(0)$ is the initial scheduling weight, $t^*$ is the transition step, and $\tau$ controls the decay rate.
+where `λ_reg(0)` is the initial scheduling weight, `t*` is the transition step, and `τ` controls the decay rate.
 
 ## 📊 Main Results
 
@@ -142,13 +141,13 @@ bash run.sh
 
 ### Optimization
 
-| Argument    | Description                                   |  Default |
-| ----------- | --------------------------------------------- | -------: |
-| `--tau`   | Decay-rate parameter$\tau$                  |    `5` |
-| `--max`   | Transition step$t^*$                        | `1000` |
-| `--init`  | Initial weight $\lambda_{\mathrm{reg}}(0)$ |  `100` |
-| `--lamb1` | L1 regularization coefficient                 | `0.01` |
-| `--lamb2` | L2 regularization coefficient                 | `0.01` |
+| Argument    | Description                   |  Default |
+| ----------- | ----------------------------- | -------: |
+| `--tau`   | Decay-rate parameter`τ`    |    `5` |
+| `--max`   | Transition step`t*`         | `1000` |
+| `--init`  | Initial weight`λ_reg(0)`   |  `100` |
+| `--lamb1` | L1 regularization coefficient | `0.01` |
+| `--lamb2` | L2 regularization coefficient | `0.01` |
 
 ### Data and graph
 
