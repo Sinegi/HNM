@@ -1,6 +1,7 @@
-<h1 align="center">Stabilizing Causal Structure Learning under Heteroscedasticity</h1>
-
-<h4 align="center">Analysis and Mitigation of Optimization Failures</h4>
+<h1 align="center">Stabilizing Causal Structure Learning under Heteroscedasticity:
+  <br>
+  <span style="font-size: 0.01em; font-weight: normal; color: gray;">Analysis and Mitigation of Optimization Failures</span>
+</h1>
 
 <p align="center">
   ✨ <a href="https://kdd2026.kdd.org/"><strong>KDD 2026</strong></a> ✨
