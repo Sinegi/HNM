@@ -181,7 +181,7 @@ If you find this work useful, please cite:
 
 ## Acknowledgements
 
-This implementation builds on ideas and utilities from continuous optimization approaches to nonlinear DAG learning, including [NOTEARS](https://github.com/xunzheng/notears).
+This implementation builds on ideas and utilities from continuous optimization approaches to nonlinear DAG learning, including [NOTEARS](https://github.com/xunzheng/notears) and [ICDH](https://github.com/naiyuyin/ICDH).
 
 ## License
 
