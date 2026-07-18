@@ -2,7 +2,9 @@
 
 <h3 align="center">Analysis and Mitigation of Optimization Failures</h3>
 
-<p align="center">✨ <strong>KDD 2026</strong> ✨</p>
+<p align="center">
+  <a href="https://kdd2026.kdd.org/"><strong>✨ KDD 2026 ✨</strong></a>
+</p>
 
 <p align="center">
   <strong>Eunjung Choi<sup>†</sup> · Seonggyeom Kim<sup>†</sup> · Dong-Kyu Chae<sup>*</sup></strong>
@@ -13,9 +15,7 @@
   <br><br>
   <a href="main_paper.pdf"><strong>Main Paper</strong></a> ·
   <a href="Supplementary_Material.pdf"><strong>Supplementary Material</strong></a> ·
-  <a href="https://kdd2026.kdd.org/"><strong>Conference</strong></a>
-  <br><br>
-  Official implementation of the <strong>KDD 2026</strong> paper.
+  <strong>Poster (TBD)</strong>
 </p>
 
 ## Overview
@@ -43,7 +43,7 @@ Standard objectives rapidly satisfy the DAG constraint, but this early convergen
 To mitigate the optimization failure above, the method begins with stabilizing mean and variance objectives and progressively transitions toward heteroscedastic negative log-likelihood optimization. The scheduling coefficient follows
 
 $$
-\lambda_{\mathrm{reg}}(t) = \lambda_{\mathrm{reg}}(0) \exp\!\left(-\frac{t}{t^*/\tau}\right)
+\lambda_{\mathrm{reg}}(t) = \lambda_{\mathrm{reg}}(0) \exp\left(-\frac{t}{t^*/\tau}\right)
 $$
 
 where `λ_reg(0)` is the initial scheduling weight, `t*` is the transition step, and `τ` controls the decay rate.
