@@ -1,7 +1,9 @@
-<h1 align="center">Stabilizing Causal Structure Learning under Heteroscedasticity:
+<h1 align="center">
+  Stabilizing Causal Structure Learning under Heteroscedasticity:
   <br>
-  <span style="font-size: 0.01em; font-weight: normal; color: gray;">Analysis and Mitigation of Optimization Failures</span>
+  <sub>Analysis and Mitigation of Optimization Failures</sub>
 </h1>
+
 
 <p align="center">
   ✨ <a href="https://kdd2026.kdd.org/"><strong>KDD 2026</strong></a> ✨
@@ -44,7 +46,7 @@ Standard objectives rapidly satisfy the DAG constraint, but this early convergen
 To mitigate the optimization failure above, the method begins with stabilizing mean and variance objectives and progressively transitions toward heteroscedastic negative log-likelihood optimization. The scheduling coefficient follows
 
 $$
-\lambda_{\mathrm{reg}}(t) = \lambda_{\mathrm{reg}}(0) \exp\left(-\frac{t}{t^*/\tau}\right)
+\lambda_{\mathrm{reg}}(t) = \lambda_{\mathrm{reg}}(0) \cdot \exp\left(-\frac{t}{t^*/\tau}\right)
 $$
 
 where `λ_reg(0)` is the initial scheduling weight, `t*` is the transition step, and `τ` controls the decay rate.
