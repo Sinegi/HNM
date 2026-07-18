@@ -1,4 +1,20 @@
-<div align="center">
+<h1 align="center">Stabilizing Causal Structure Learning under Heteroscedasticity</h1>
+
+<h3 align="center">Analysis and Mitigation of Optimization Failures</h3>
+
+<p align="center">
+  <strong>Eunjung Choi<sup>†</sup> · Seonggyeom Kim<sup>†</sup> · Dong-Kyu Chae<sup>*</sup></strong>
+  <br>
+  <a href="https://dilab.hanyang.ac.kr/">Data Intelligence Lab</a>, Hanyang University
+  <br>
+  <sup>†</sup>Equal contribution &nbsp;&nbsp; <sup>*</sup>Corresponding author
+  <br><br>
+  <a href="main_paper.pdf"><strong>Main Paper</strong></a> ·
+  <a href="Supplementary_Material.pdf"><strong>Supplementary Material</strong></a> ·
+  <a href="https://kdd2026.kdd.org/"><strong>Conference</strong></a>
+  <br><br>
+  Official implementation of the <strong>KDD 2026</strong> paper.
+</p>
 
 ## Overview
 
