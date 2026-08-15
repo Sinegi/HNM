@@ -16,7 +16,7 @@
   <br>
   <sup>†</sup>Equal contribution    <sup>*</sup>Corresponding author
   <br><br>
-  <a href="main_paper.pdf"><strong>Main Paper</strong></a> ·
+  <a href="[main_paper.pdf](https://dl.acm.org/doi/abs/10.1145/3770855.3818156)"><strong>Main Paper</strong></a> ·
   <a href="Supplementary_Material.pdf"><strong>Supplementary Material</strong></a> ·
   <strong>Poster (TBD)</strong>
 </p>
@@ -170,12 +170,11 @@ If you find this work useful, please cite:
 
 ```bibtex
 @inproceedings{choi2026stabilizing,
-  title     = {Stabilizing Causal Structure Learning under Heteroscedasticity:
-               Analysis and Mitigation of Optimization Failures},
-  author    = {Choi, Eunjung and Kim, Seonggyeom and Chae, Dong-Kyu},
-  booktitle = {Proceedings of the 32nd ACM SIGKDD Conference on
-               Knowledge Discovery and Data Mining},
-  year      = {2026}
+  title={Stabilizing Causal Structure Learning under Heteroscedasticity: Analysis and Mitigation of Optimization Failures},
+  author={Choi, Eunjung and Kim, Seonggyeom and Chae, Dong-Kyu},
+  booktitle={Proceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining V. 2},
+  pages={652--662},
+  year={2026}
 }
 ```
 
