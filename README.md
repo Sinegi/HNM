@@ -16,7 +16,7 @@
   <br>
   <sup>†</sup>Equal contribution    <sup>*</sup>Corresponding author
   <br><br>
-  <a href="https://dl.acm.org/doi/abs/10.1145/3770855.3818156">Main Paper</a> ·
+  <a href="https://dl.acm.org/doi/abs/10.1145/3770855.3818156"><strong>Main Paper</strong></a> ·
   <a href="Supplementary_Material.pdf"><strong>Supplementary Material</strong></a> ·
   <strong>Poster (TBD)</strong>
 </p>
